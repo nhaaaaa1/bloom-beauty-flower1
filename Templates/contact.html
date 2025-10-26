@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Bloom & Beauty{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="text-center mb-5">Contact Us</h1>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>Get in Touch</h3>
+                    <p class="text-muted">We'd love to hear from you! Whether you have questions about our flowers, need help with an order, or want to share feedback, our team is here to help.</p>
+
+                    <div class="contact-info mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-success me-3 fa-lg"></i>
+                            <div>
+                                <h6 class="mb-0">Our Location</h6>
+                                <p class="text-muted mb-0">123 Flower Street, Garden City</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-phone text-success me-3 fa-lg"></i>
+                            <div>
+                                <h6 class="mb-0">Phone Number</h6>
+                                <p class="text-muted mb-0">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-envelope text-success me-3 fa-lg"></i>
+                            <div>
+                                <h6 class="mb-0">Email Address</h6>
+                                <p class="text-muted mb-0">info@bloombeauty.com</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-clock text-success me-3 fa-lg"></i>
+                            <div>
+                                <h6 class="mb-0">Business Hours</h6>
+                                <p class="text-muted mb-0">Mon-Sat: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5>Why Choose Us?</h5>
+                        <ul class="list-unstyled text-muted">
+                            <li><i class="fas fa-check text-success me-2"></i>Same-day flower delivery</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Fresh flowers guaranteed</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Expert florist arrangements</li>
+                            <li><i class="fas fa-check text-success me-2"></i>24/7 customer support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow border-0">
+                        <div class="card-body p-4">
+                            <h5 class="card-title mb-4">Send us a Message</h5>
+                            <form method="POST" action="{{ url_for('contact') }}" id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required
+                                           placeholder="Enter your full name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required
+                                           placeholder="Enter your email address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" name="subject" required>
+                                        <option value="" selected disabled>Select a subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Product Question">Product Question</option>
+                                        <option value="Order Issue">Order Issue</option>
+                                        <option value="Delivery Question">Delivery Question</option>
+                                        <option value="Custom Arrangement">Custom Arrangement</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required
+                                              placeholder="Tell us how we can help you..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100 btn-lg" id="submitBtn">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
