@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 
-{% block title %}Home - Bloom & Beauty{% endblock %}
-
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-section bg-light py-5">
+<section class="hero-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4 fw-bold text-success">Beautiful Flowers for Every Occasion</h1>
-                <p class="lead">Fresh, hand-picked flowers delivered to your doorstep. Make someone's day special with our stunning arrangements.</p>
-                <a href="#featured-products" class="btn btn-success btn-lg">Shop Now</a>
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold text-white">Beautiful Flowers for Every Occasion</h1>
+                <p class="lead text-light">Discover our exquisite collection of purple-themed floral arrangements that bring joy and beauty to your life.</p>
+                <a href="#products" class="btn btn-light btn-lg purple-btn">
+                    <i class="fas fa-shopping-bag me-2"></i>Shop Now
+                </a>
             </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1487070183333-13a19e16d3d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                     alt="Beautiful Flower Arrangement" class="img-fluid rounded shadow">
-            </div>
+
         </div>
     </div>
 </section>
 
 <!-- Featured Products -->
-<section id="featured-products" class="py-5">
+<section id="products" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-5">Featured Products</h2>
-        <div class="row">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Featured Flowers</h2>
+            <p class="text-muted">Handpicked arrangements for your special moments</p>
+        </div>
+
+        <div class="row g-4">
             {% for product in products %}
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100 product-card">
-                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                         class="card-img-top" alt="{{ product.name }}">
-                    <div class="card-body d-flex flex-column">
+            <div class="col-md-6 col-lg-4">
+                <div class="card product-card h-100">
+                    <img src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text flex-grow-1">{{ product.description }}</p>
-                        <div class="mt-auto">
-                            <p class="h5 text-success">${{ "%.2f"|format(product.price) }}</p>
-                            <a href="{{ url_for('product_details', product_id=product.id) }}"
-                               class="btn btn-outline-success w-100">View Details</a>
+                        <p class="card-text">{{ product.description[:100] }}...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="price">${{ "%.2f"|format(product.price) }}</span>
+                            <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn purple-btn">
+                                View Details
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -47,23 +48,29 @@
 </section>
 
 <!-- Features Section -->
-<section class="bg-light py-5">
+<section class="features-section py-5 bg-light">
     <div class="container">
-        <div class="row text-center">
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-truck fa-3x text-success mb-3"></i>
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
                 <h4>Free Delivery</h4>
-                <p class="text-muted">Free same-day delivery for orders over $50</p>
+                <p class="text-muted">Free shipping on orders over $50</p>
             </div>
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-leaf fa-3x text-success mb-3"></i>
-                <h4>Fresh Flowers</h4>
-                <p class="text-muted">Hand-picked fresh flowers daily from local growers</p>
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4>Fresh Guarantee</h4>
+                <p class="text-muted">Fresh flowers guaranteed for 7 days</p>
             </div>
-            <div class="col-md-4 mb-4">
-                <i class="fas fa-headset fa-3x text-success mb-3"></i>
+            <div class="col-md-4">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
                 <h4>24/7 Support</h4>
-                <p class="text-muted">Our customer service team is always here to help</p>
+                <p class="text-muted">We're here to help you anytime</p>
             </div>
         </div>
     </div>

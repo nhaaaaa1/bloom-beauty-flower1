@@ -1,58 +1,66 @@
 {% extends "base.html" %}
 
-{% block title %}About Us - Bloom & Beauty{% endblock %}
-
 {% block content %}
-<div class="container py-5">
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h1 class="text-center mb-5">About Bloom & Beauty</h1>
-
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                         alt="Our Flower Shop" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-6">
-                    <h3>Our Story</h3>
-                    <p class="text-muted">Founded in 2010, Bloom & Beauty started as a small family-owned flower shop with a passion for bringing nature's beauty into people's lives. What began as a humble storefront has grown into a trusted online florist serving customers nationwide.</p>
-                    <p class="text-muted">We believe that flowers have the power to brighten days, express emotions, and create lasting memories. That's why we're committed to providing only the freshest, most beautiful flowers for every occasion.</p>
-                </div>
+<!-- About Hero -->
+<section class="about-hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">About Purple Bloom</h1>
+                <p class="lead">Bringing nature's beauty to your doorstep with passion and care.</p>
             </div>
-
-            <div class="row mb-5">
-                <div class="col-md-6 order-md-2">
-                    <img src="https://images.unsplash.com/photo-1582794543139-8ac9cad0c8e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                         alt="Our Team" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h3>Our Mission</h3>
-                    <p class="text-muted">Our mission is simple: to deliver happiness through flowers. We work directly with local growers and international suppliers to ensure our customers receive the highest quality flowers at fair prices.</p>
-                    <p class="text-muted">We're committed to sustainable practices and supporting our local community while bringing you the best nature has to offer.</p>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <h3 class="mb-4">Why Choose Us?</h3>
-                <div class="row mt-4">
-                    <div class="col-md-4 mb-4">
-                        <i class="fas fa-award fa-2x text-success mb-3"></i>
-                        <h5>Quality Guarantee</h5>
-                        <p class="text-muted">Fresh flowers guaranteed for 7 days</p>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <i class="fas fa-clock fa-2x text-success mb-3"></i>
-                        <h5>Same Day Delivery</h5>
-                        <p class="text-muted">Order by 2 PM for same-day delivery</p>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <i class="fas fa-smile fa-2x text-success mb-3"></i>
-                        <h5>Expert Florists</h5>
-                        <p class="text-muted">Professional arrangements by skilled florists</p>
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=600&h=400&fit=crop"
+                     alt="Our Flower Shop" class="img-fluid rounded">
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Our Story -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-title">Our Story</h2>
+                <p class="text-muted">
+                    Founded in 2024, Purple Bloom started as a small neighborhood flower shop with a big dream:
+                    to spread joy and beauty through the art of floral arrangement. Our passion for purple flowers
+                    inspired our name and our unique approach to creating stunning bouquets that capture the
+                    elegance and mystery of this royal color.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Why Choose Us</h2>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="team-icon">
+                    <i class="fas fa-flower"></i>
+                </div>
+                <h4>Fresh Flowers</h4>
+                <p>Daily deliveries ensure the freshest flowers for your arrangements</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="team-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h4>Creative Designs</h4>
+                <p>Unique and creative floral designs for every occasion</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="team-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4>Passionate Team</h4>
+                <p>Dedicated florists who love what they do</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
